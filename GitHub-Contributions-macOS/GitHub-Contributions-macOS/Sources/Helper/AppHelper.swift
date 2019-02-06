@@ -3,7 +3,7 @@ import Kanna
 
 class AppHelper {
     private let userDefaults: UserDefaults
-    public static var appGroupDefaults = AppHelper(userDefaults: UserDefaults(suiteName: "NG5W75WE8U.de.felixfoertsch.GitHub-Contributions")!)
+    public static var appGroupDefaults = AppHelper(userDefaults: UserDefaults(suiteName: AppConfig.appGroup)!)
     
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults

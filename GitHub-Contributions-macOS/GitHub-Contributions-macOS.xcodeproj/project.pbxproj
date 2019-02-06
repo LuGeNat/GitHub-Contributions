@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		3F68F0A4220B266700E630FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F68F0A3220B266700E630FB /* Assets.xcassets */; };
 		3F68F0A7220B266700E630FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F68F0A5220B266700E630FB /* Main.storyboard */; };
-		3F68F0D3220B27AD00E630FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0CE220B27AD00E630FB /* ViewController.swift */; };
+		3F68F0D3220B27AD00E630FB /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0CE220B27AD00E630FB /* AppViewController.swift */; };
 		3F68F0D4220B27AD00E630FB /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0CF220B27AD00E630FB /* AppHelper.swift */; };
 		3F68F0D5220B27AD00E630FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0D0220B27AD00E630FB /* AppDelegate.swift */; };
 		3F68F0D6220B27AD00E630FB /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0D1220B27AD00E630FB /* Contribution.swift */; };
 		3F68F0D7220B27AD00E630FB /* GitHubHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0D2220B27AD00E630FB /* GitHubHelper.swift */; };
+		3F68F0DE220B3C3E00E630FB /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0DD220B3C3E00E630FB /* AppConfig.swift */; };
 		6BD87003D066BEEF9795BE49 /* Pods_GitHub_Contributions_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0409EC677F98FCF666D2A205 /* Pods_GitHub_Contributions_macOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,12 +25,13 @@
 		3F68F0A3220B266700E630FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F68F0A6220B266700E630FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F68F0A8220B266700E630FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F68F0A9220B266700E630FB /* GitHub_Contributions_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitHub_Contributions_macOS.entitlements; sourceTree = "<group>"; };
-		3F68F0CE220B27AD00E630FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F68F0CE220B27AD00E630FB /* AppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		3F68F0CF220B27AD00E630FB /* AppHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		3F68F0D0220B27AD00E630FB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F68F0D1220B27AD00E630FB /* Contribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 		3F68F0D2220B27AD00E630FB /* GitHubHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubHelper.swift; sourceTree = "<group>"; };
+		3F68F0DC220B3C1000E630FB /* GitHub-Contributions-macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GitHub-Contributions-macOS.entitlements"; sourceTree = "<group>"; };
+		3F68F0DD220B3C3E00E630FB /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		E5B10E0DCEEA2CDBEAC4B4C3 /* Pods-GitHub-Contributions-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Contributions-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-Contributions-macOS/Pods-GitHub-Contributions-macOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,9 +85,10 @@
 		3F68F09E220B266600E630FB /* GitHub-Contributions-macOS */ = {
 			isa = PBXGroup;
 			children = (
+				3F68F0DC220B3C1000E630FB /* GitHub-Contributions-macOS.entitlements */,
+				3F68F0CD220B27AD00E630FB /* Sources */,
 				3F68F0D9220B27DF00E630FB /* Supporting Files */,
 				3F68F0D8220B27CD00E630FB /* UI */,
-				3F68F0CD220B27AD00E630FB /* Sources */,
 			);
 			path = "GitHub-Contributions-macOS";
 			sourceTree = "<group>";
@@ -93,11 +96,10 @@
 		3F68F0CD220B27AD00E630FB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3F68F0CE220B27AD00E630FB /* ViewController.swift */,
-				3F68F0CF220B27AD00E630FB /* AppHelper.swift */,
+				3F68F0DB220B3B5500E630FB /* Helper */,
+				3F68F0DA220B3B4800E630FB /* Model */,
 				3F68F0D0220B27AD00E630FB /* AppDelegate.swift */,
-				3F68F0D1220B27AD00E630FB /* Contribution.swift */,
-				3F68F0D2220B27AD00E630FB /* GitHubHelper.swift */,
+				3F68F0CE220B27AD00E630FB /* AppViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -115,9 +117,26 @@
 			children = (
 				3F68F0A3220B266700E630FB /* Assets.xcassets */,
 				3F68F0A8220B266700E630FB /* Info.plist */,
-				3F68F0A9220B266700E630FB /* GitHub_Contributions_macOS.entitlements */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F68F0DA220B3B4800E630FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F68F0D1220B27AD00E630FB /* Contribution.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F68F0DB220B3B5500E630FB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3F68F0DD220B3C3E00E630FB /* AppConfig.swift */,
+				3F68F0CF220B27AD00E630FB /* AppHelper.swift */,
+				3F68F0D2220B27AD00E630FB /* GitHubHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +173,14 @@
 				TargetAttributes = {
 					3F68F09B220B266600E630FB = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -241,11 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F68F0D3220B27AD00E630FB /* ViewController.swift in Sources */,
+				3F68F0D3220B27AD00E630FB /* AppViewController.swift in Sources */,
 				3F68F0D5220B27AD00E630FB /* AppDelegate.swift in Sources */,
 				3F68F0D4220B27AD00E630FB /* AppHelper.swift in Sources */,
 				3F68F0D6220B27AD00E630FB /* Contribution.swift in Sources */,
 				3F68F0D7220B27AD00E630FB /* GitHubHelper.swift in Sources */,
+				3F68F0DE220B3C3E00E630FB /* AppConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,17 +411,19 @@
 			baseConfigurationReference = 1A667BF3B5E6EE112E3FB8F7 /* Pods-GitHub-Contributions-macOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "GitHub-Contributions-macOS/GitHub_Contributions_macOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "GitHub-Contributions-macOS/GitHub-Contributions-macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = NG5W75WE8U;
-				INFOPLIST_FILE = "GitHub-Contributions-macOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GitHub-Contributions-macOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.felixfoertsch.GitHub-Contributions-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -403,17 +433,19 @@
 			baseConfigurationReference = E5B10E0DCEEA2CDBEAC4B4C3 /* Pods-GitHub-Contributions-macOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "GitHub-Contributions-macOS/GitHub_Contributions_macOS.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "GitHub-Contributions-macOS/GitHub-Contributions-macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = NG5W75WE8U;
-				INFOPLIST_FILE = "GitHub-Contributions-macOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GitHub-Contributions-macOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.felixfoertsch.GitHub-Contributions-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
