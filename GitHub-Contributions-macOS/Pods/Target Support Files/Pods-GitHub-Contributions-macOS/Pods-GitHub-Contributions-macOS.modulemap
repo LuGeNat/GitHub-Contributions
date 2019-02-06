@@ -1,0 +1,6 @@
+framework module Pods_GitHub_Contributions_macOS {
+  umbrella header "Pods-GitHub-Contributions-macOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

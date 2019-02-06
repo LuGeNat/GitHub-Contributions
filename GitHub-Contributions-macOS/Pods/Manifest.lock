@@ -1,0 +1,20 @@
+PODS:
+  - Kanna (4.0.3)
+  - SwiftSVG (2.2.0)
+
+DEPENDENCIES:
+  - Kanna (~> 4.0.3)
+  - SwiftSVG (~> 2.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kanna
+    - SwiftSVG
+
+SPEC CHECKSUMS:
+  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  SwiftSVG: 19bc4e434dcf236ece45ddf75f5ee1d3ef8061e6
+
+PODFILE CHECKSUM: 098793698becc2d0f85142287e6785cc0bd5f1b2
+
+COCOAPODS: 1.5.3
