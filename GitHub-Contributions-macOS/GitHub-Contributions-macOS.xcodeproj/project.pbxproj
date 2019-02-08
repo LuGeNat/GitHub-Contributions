@@ -223,7 +223,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GitHub-Contributions-macOS/Pods-GitHub-Contributions-macOS-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Contributions-macOS/Pods-GitHub-Contributions-macOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework",
 			);
@@ -236,7 +236,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitHub-Contributions-macOS/Pods-GitHub-Contributions-macOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHub-Contributions-macOS/Pods-GitHub-Contributions-macOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		77523AC96415D416B5EAC5B6 /* [CP] Check Pods Manifest.lock */ = {

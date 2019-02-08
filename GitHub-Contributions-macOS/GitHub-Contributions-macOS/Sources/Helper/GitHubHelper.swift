@@ -26,7 +26,9 @@ public class GitHubHelper {
     
     private static func parseSVG(from contributionPage: HTMLDocument) -> String {
         if let svgxml = contributionPage.at_xpath("/html/body/div/div/div/div[1]/svg")?.toXML {
-            return svgxml
+            // Remove the text elements from the string
+            let cleanString = svgxml.replacingOccurrences(of: "<g transform=\"translate(16, 20)\">", with: "<g transform=\"translate(5, 10)\">").replacingOccurrences(of: "<text", with: "<!-- <text").replacingOccurrences(of: "</text>", with: "</text> -->")
+            return cleanString
         }
         return ""
     }
