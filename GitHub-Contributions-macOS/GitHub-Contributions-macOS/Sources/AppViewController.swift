@@ -8,6 +8,7 @@ class AppViewController: NSViewController {
     @IBOutlet weak var usernameTextField: NSTextField!
     @IBOutlet weak var overviewLabel: NSTextField!
     @IBOutlet weak var svgWebView: WKWebView!
+    @IBOutlet weak var setUsernameLabel: NSTextField!
     
     // MARK: - Setup
     override func viewDidLoad() {
@@ -15,6 +16,7 @@ class AppViewController: NSViewController {
         
         // Load data from UserDefaults, if there is data
         self.usernameTextField.stringValue = loadDataFromAppDefaults()
+        self.setUsernameLabel.stringValue = loadDataFromAppDefaults()
         self.overviewLabel.stringValue = GitHubHelper.fetch(for: "felixfoertsch").thisYearsContribution
     }
     
@@ -32,6 +34,11 @@ class AppViewController: NSViewController {
     @IBAction func setButtonPressed(_ sender: Any) {
         print(appDefaults.username!)
         fetchContributions(username: appDefaults.username!)
+    }
+    @IBAction func changeUsernamePressed(_ sender: Any) {
+        let sb = NSStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateController(withIdentifier: "ChangeUsernameViewController")
+        presentAsSheet(vc as! NSViewController)
     }
     
     // MARK: - Methods
