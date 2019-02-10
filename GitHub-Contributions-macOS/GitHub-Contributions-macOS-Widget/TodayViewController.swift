@@ -8,9 +8,11 @@
 
 import Cocoa
 import NotificationCenter
+import WebKit
 
 class TodayViewController: NSViewController, NCWidgetProviding {
     @IBOutlet weak var usernameLabel: NSTextField!
+    @IBOutlet weak var contributionWebView: WKWebView!
     
     override var nibName: NSNib.Name? {
         return NSNib.Name("TodayViewController")
@@ -22,6 +24,8 @@ class TodayViewController: NSViewController, NCWidgetProviding {
         // time we called you
         completionHandler(.noData)
         self.usernameLabel.stringValue = AppHelper.appGroupDefaults.username!
+        let contributionTuple = GitHubHelper.fetch(for: "felixfoertsch")
+        self.contributionWebView.loadHTMLString(contributionTuple.svgXMLString, baseURL: nil)
     }
 
 }

@@ -1,5 +1,6 @@
 import Foundation
 import Kanna
+import SwiftDate
 
 public class GitHubHelper {
     // MARK: - API
@@ -34,8 +35,23 @@ public class GitHubHelper {
     }
     
     private static func parseContributions(from contributionPage: HTMLDocument) -> [Contribution] {
-        let contributions = [Contribution]()
-        // TODO
+        var contributions = [Contribution]()
+        // TODO: Create flexible time zones.
+        
+        for node in contributionPage.xpath("//rect") {
+            // node["data-date"] looks like: 2019-01-24
+            let dataDateString  = node["data-date"]
+            let dataCountString = node["data-count"]
+            
+            // Create a Date
+            let myDate = dataDateString!.toDate()!.date
+            
+            // Create an Int
+            let myInt = Int(dataCountString!)!
+            
+            let contribution = Contribution(dataDate: myDate, dataCount: myInt)
+            contributions.append(contribution)
+        }
         return contributions
     }
     

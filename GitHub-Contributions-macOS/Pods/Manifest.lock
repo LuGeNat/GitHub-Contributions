@@ -1,20 +1,20 @@
 PODS:
   - Kanna (4.0.3)
-  - SwiftSVG (2.2.0)
+  - SwiftDate (5.1.0)
 
 DEPENDENCIES:
   - Kanna (~> 4.0.3)
-  - SwiftSVG (~> 2.0)
+  - SwiftDate (~> 5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Kanna
-    - SwiftSVG
+    - SwiftDate
 
 SPEC CHECKSUMS:
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
-  SwiftSVG: 19bc4e434dcf236ece45ddf75f5ee1d3ef8061e6
+  SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
 
-PODFILE CHECKSUM: 610df576991af13fd0f6d3e62aaf78e91681685a
+PODFILE CHECKSUM: 2f7108e3c8e55a2e446132a50534971a12317f77
 
 COCOAPODS: 1.6.0

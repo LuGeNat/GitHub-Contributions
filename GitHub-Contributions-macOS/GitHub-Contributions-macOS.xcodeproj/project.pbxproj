@@ -24,6 +24,8 @@
 		3FDB902322105EA5004E88A7 /* GitHub-Contributions-macOS-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3FDB901422105EA5004E88A7 /* GitHub-Contributions-macOS-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3FDB902722105FEE004E88A7 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0DD220B3C3E00E630FB /* AppConfig.swift */; };
 		3FDB902822105FEE004E88A7 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0CF220B27AD00E630FB /* AppHelper.swift */; };
+		3FDB902922106360004E88A7 /* GitHubHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0D2220B27AD00E630FB /* GitHubHelper.swift */; };
+		3FDB902A221063AC004E88A7 /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0D1220B27AD00E630FB /* Contribution.swift */; };
 		3FEBAADC220F7EE200ED89EF /* AppWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEBAADB220F7EE200ED89EF /* AppWindowController.swift */; };
 		6BD87003D066BEEF9795BE49 /* Pods_GitHub_Contributions_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0409EC677F98FCF666D2A205 /* Pods_GitHub_Contributions_macOS.framework */; };
 /* End PBXBuildFile section */
@@ -341,14 +343,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GitHub-Contributions-macOS/Pods-GitHub-Contributions-macOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSVG.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -421,9 +423,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDB902922106360004E88A7 /* GitHubHelper.swift in Sources */,
 				3FDB901822105EA5004E88A7 /* TodayViewController.swift in Sources */,
 				3FDB902822105FEE004E88A7 /* AppHelper.swift in Sources */,
 				3FDB902722105FEE004E88A7 /* AppConfig.swift in Sources */,
+				3FDB902A221063AC004E88A7 /* Contribution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,12 +5,12 @@ target 'GitHub-Contributions-macOS' do
   use_frameworks!
 
   pod 'Kanna', '~> 4.0.3'
-  pod 'SwiftSVG', '~> 2.0'
+  pod 'SwiftDate', '~> 5.0'
 end
 
 target 'GitHub-Contributions-macOS-Widget' do
   use_frameworks!
   
   pod 'Kanna', '~> 4.0.3'
-  pod 'SwiftSVG', '~> 2.0'
+  pod 'SwiftDate', '~> 5.0'
 end
