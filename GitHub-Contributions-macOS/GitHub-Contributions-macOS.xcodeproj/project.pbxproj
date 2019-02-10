@@ -16,6 +16,7 @@
 		3F68F0D6220B27AD00E630FB /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0D1220B27AD00E630FB /* Contribution.swift */; };
 		3F68F0D7220B27AD00E630FB /* GitHubHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0D2220B27AD00E630FB /* GitHubHelper.swift */; };
 		3F68F0DE220B3C3E00E630FB /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68F0DD220B3C3E00E630FB /* AppConfig.swift */; };
+		3FEBAADC220F7EE200ED89EF /* AppWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEBAADB220F7EE200ED89EF /* AppWindowController.swift */; };
 		6BD87003D066BEEF9795BE49 /* Pods_GitHub_Contributions_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0409EC677F98FCF666D2A205 /* Pods_GitHub_Contributions_macOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		3F68F0D2220B27AD00E630FB /* GitHubHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubHelper.swift; sourceTree = "<group>"; };
 		3F68F0DC220B3C1000E630FB /* GitHub-Contributions-macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GitHub-Contributions-macOS.entitlements"; sourceTree = "<group>"; };
 		3F68F0DD220B3C3E00E630FB /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		3FEBAADB220F7EE200ED89EF /* AppWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
 		E5B10E0DCEEA2CDBEAC4B4C3 /* Pods-GitHub-Contributions-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Contributions-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-Contributions-macOS/Pods-GitHub-Contributions-macOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,11 +100,12 @@
 		3F68F0CD220B27AD00E630FB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3F68F0DB220B3B5500E630FB /* Helper */,
-				3F68F0DA220B3B4800E630FB /* Model */,
 				3F68F0D0220B27AD00E630FB /* AppDelegate.swift */,
 				3F68F0CE220B27AD00E630FB /* AppViewController.swift */,
+				3FEBAADB220F7EE200ED89EF /* AppWindowController.swift */,
 				3F2C1F82220F4827004B2B50 /* ChangeUsernameViewController.swift */,
+				3F68F0DB220B3B5500E630FB /* Helper */,
+				3F68F0DA220B3B4800E630FB /* Model */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F2C1F83220F4827004B2B50 /* ChangeUsernameViewController.swift in Sources */,
+				3FEBAADC220F7EE200ED89EF /* AppWindowController.swift in Sources */,
 				3F68F0D3220B27AD00E630FB /* AppViewController.swift in Sources */,
 				3F68F0D5220B27AD00E630FB /* AppDelegate.swift in Sources */,
 				3F68F0D4220B27AD00E630FB /* AppHelper.swift in Sources */,
