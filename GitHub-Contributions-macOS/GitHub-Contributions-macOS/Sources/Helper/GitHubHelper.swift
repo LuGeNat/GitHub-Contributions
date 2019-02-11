@@ -12,6 +12,12 @@ public class GitHubHelper {
         let contributions = parseContributions(from: page)
         let thisYearsContribution = parseThisYearsContributions(from: page)
         
+        var imageCol = [NSImage]()
+        for contribution in contributions {
+            let image = Contribution.generateContributionSquareImage(for: contribution, withEdgeLength: 10)
+            imageCol.append(image)
+        }
+        
         return (svgXMLString, contributions, thisYearsContribution)
     }
     
