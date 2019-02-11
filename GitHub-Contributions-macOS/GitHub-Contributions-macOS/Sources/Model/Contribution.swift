@@ -1,6 +1,11 @@
-import Foundation
+import AppKit
 
 public struct Contribution {
-    public let dataDate: Date
-    public let dataCount: Int
+    let dataDate: Date
+    let dataCount: Int
+    let dataColor: String
 }
+
+//public func createContributionSquareImage(for contribution: Contribution, with edgeLength: Int) -> NSImage {
+//    return NSImage
+//}

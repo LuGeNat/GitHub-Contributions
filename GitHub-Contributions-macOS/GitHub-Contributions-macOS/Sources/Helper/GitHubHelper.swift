@@ -42,6 +42,7 @@ public class GitHubHelper {
             // node["data-date"] looks like: 2019-01-24
             let dataDateString  = node["data-date"]
             let dataCountString = node["data-count"]
+            let dataColor       = node["fill"]!
             
             // Create a Date
             let myDate = dataDateString!.toDate()!.date
@@ -49,7 +50,7 @@ public class GitHubHelper {
             // Create an Int
             let myInt = Int(dataCountString!)!
             
-            let contribution = Contribution(dataDate: myDate, dataCount: myInt)
+            let contribution = Contribution(dataDate: myDate, dataCount: myInt, dataColor: dataColor)
             contributions.append(contribution)
         }
         return contributions
