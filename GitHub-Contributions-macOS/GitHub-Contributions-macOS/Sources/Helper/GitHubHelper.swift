@@ -46,16 +46,16 @@ public class GitHubHelper {
         
         for node in contributionPage.xpath("//rect") {
             // node["data-date"] looks like: 2019-01-24
-            let dataDateString  = node["data-date"]
-            let dataCountString = node["data-count"]
+            let contributionDate: Date?
+            if let date  = node["data-date"] {
+                contributionDate = date.toDate()!.date
+            } else {
+                contributionDate = nil
+            }
             
-            // Create a Date
-            let myDate = dataDateString!.toDate()!.date
+            let contributionCount = Int(node["data-count"]!)!
             
-            // Create an Int
-            let myInt = Int(dataCountString!)!
-            
-            let contribution = Contribution(dataDate: myDate, dataCount: myInt)
+            let contribution = Contribution(dataDate: contributionDate, dataCount: contributionCount)
             contributions.append(contribution)
         }
         return contributions
