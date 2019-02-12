@@ -4,13 +4,13 @@ import SwiftDate
 
 public class GitHubHelper {
     // MARK: - API
-    public static func fetch(for username: String) -> (svgXMLString: String, contributions: [Contribution], thisYearsContribution: String) {
+    public static func fetch(for username: String) -> (svgXMLString: String, contributions: [Contribution], thisYearsContributionCount: Int) {
 
         let page = fetchContributionPage(for: username)
         
         let svgXMLString = parseSVG(from: page)
         let contributions = parseContributions(from: page)
-        let thisYearsContribution = parseThisYearsContributions(from: page)
+        let thisYearsContribution = parseThisYearsContributionsCount(from: page)
         
         var imageCol = [NSImage]()
         for contribution in contributions {
@@ -48,7 +48,6 @@ public class GitHubHelper {
             // node["data-date"] looks like: 2019-01-24
             let dataDateString  = node["data-date"]
             let dataCountString = node["data-count"]
-            let dataColor       = node["fill"]!
             
             // Create a Date
             let myDate = dataDateString!.toDate()!.date
@@ -56,17 +55,17 @@ public class GitHubHelper {
             // Create an Int
             let myInt = Int(dataCountString!)!
             
-            let contribution = Contribution(dataDate: myDate, dataCount: myInt, dataColor: dataColor)
+            let contribution = Contribution(dataDate: myDate, dataCount: myInt)
             contributions.append(contribution)
         }
         return contributions
     }
     
-    private static func parseThisYearsContributions(from contributionPage: HTMLDocument) -> String {
+    private static func parseThisYearsContributionsCount(from contributionPage: HTMLDocument) -> Int {
         if let thisYearsContribution = contributionPage.at_xpath("/html/body/div/div/h2")?.content {
-            // TODO: Extract only the count of contribution with a RegEx
-            return thisYearsContribution.replacingOccurrences(of: "\n", with: "")
+            let count = thisYearsContribution.trimmingCharacters(in: CharacterSet(charactersIn: "1234567890").inverted)
+            return Int(count)!
         }
-        return "You didn't contribute anything."
+        return 0
     }
 }

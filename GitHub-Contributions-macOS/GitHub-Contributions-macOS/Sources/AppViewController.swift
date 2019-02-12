@@ -5,7 +5,6 @@ import WebKit
 class AppViewController: NSViewController, ChangeUsernameViewControllerDelegate {
     // MARK: - Property Definition
     let appDefaults = AppHelper.appGroupDefaults
-    @IBOutlet weak var overviewLabel: NSTextField!
     @IBOutlet weak var svgWebView: WKWebView!
     @IBOutlet weak var setUsernameLabel: NSTextField!
     
@@ -15,9 +14,8 @@ class AppViewController: NSViewController, ChangeUsernameViewControllerDelegate 
         
         // Load data from UserDefaults, if there is data
         if let username = AppHelper.appGroupDefaults.username {
-            self.setUsernameLabel.stringValue = username
+            didSet(username: username)
         }
-        self.overviewLabel.stringValue = GitHubHelper.fetch(for: "felixfoertsch").thisYearsContribution
     }
     
     // MARK: - User Interface Actions
@@ -29,12 +27,11 @@ class AppViewController: NSViewController, ChangeUsernameViewControllerDelegate 
     // MARK: - Methods
     private func fetchContributions(username: String) {
         let contributionTuple = GitHubHelper.fetch(for: username)
-        self.overviewLabel.stringValue = contributionTuple.thisYearsContribution
         self.svgWebView.loadHTMLString(contributionTuple.svgXMLString, baseURL: nil)
     }
     
     // MARK: - Delegation
     func didSet(username: String) {
-        setUsernameLabel.stringValue = username
+        self.setUsernameLabel.stringValue = username + " (" + String(GitHubHelper.fetch(for: username).thisYearsContributionCount) + ")"
     }
 }

@@ -774,11 +774,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="AppViewController" customModule="GitHub_Contributions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="170"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7M-j6-TFX">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="146"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -786,7 +786,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dW-ZR-N4G">
-                                <rect key="frame" x="681" y="140" width="61" height="32"/>
+                                <rect key="frame" x="681" y="142" width="61" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Set" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0kP-Jj-CoA">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -796,35 +796,28 @@
                                     <action selector="setButtonPressed:" target="XfG-lQ-9wD" id="2wN-Tl-fQa"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ym-N5-Leq">
-                                <rect key="frame" x="589" y="253" width="143" height="17"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Ym-N5-Leq">
+                                <rect key="frame" x="-2" y="153" width="66" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Username" id="VEp-8s-Lff">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wr-cf-ov0">
-                                <rect key="frame" x="34" y="211" width="669" height="17"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" id="jko-jL-9pr">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="3Ym-N5-Leq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="4BR-Zb-uG1"/>
+                            <constraint firstItem="3Ym-N5-Leq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="51Q-tq-yYB"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="overviewLabel" destination="4wr-cf-ov0" id="bel-Zv-67V"/>
                         <outlet property="setUsernameLabel" destination="3Ym-N5-Leq" id="yEn-no-Cb6"/>
                         <outlet property="svgWebView" destination="c7M-j6-TFX" id="WaQ-60-48s"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="617"/>
+            <point key="canvasLocation" x="75" y="567"/>
         </scene>
     </scenes>
     <resources>
