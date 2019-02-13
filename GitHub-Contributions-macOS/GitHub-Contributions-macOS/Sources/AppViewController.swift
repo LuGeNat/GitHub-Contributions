@@ -2,7 +2,7 @@ import Foundation
 import Cocoa
 import WebKit
 
-class AppViewController: NSViewController, ChangeUsernameViewControllerDelegate {
+class AppViewController: NSViewController {
     // MARK: - Property Definition
     let appDefaults = AppHelper.appGroupDefaults
     @IBOutlet weak var svgWebView: WKWebView!
@@ -29,7 +29,9 @@ class AppViewController: NSViewController, ChangeUsernameViewControllerDelegate 
         let contributionTuple = GitHubHelper.fetch(for: username)
         self.svgWebView.loadHTMLString(contributionTuple.svgXMLString, baseURL: nil)
     }
-    
+}
+
+extension AppViewController: ChangeUsernameViewControllerDelegate {
     // MARK: - Delegation
     func didSet(username: String) {
         self.setUsernameLabel.stringValue = username + " (" + String(GitHubHelper.fetch(for: username).thisYearsContributionCount) + ")"

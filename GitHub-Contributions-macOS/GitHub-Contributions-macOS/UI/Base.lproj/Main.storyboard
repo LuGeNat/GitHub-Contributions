@@ -708,8 +708,23 @@
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="gKB-u2-8zd"/>
+                                <toolbarItem implicitItemIdentifier="93D5324D-FDD5-4DA1-9833-EAC218A17673" label="GHView" paletteLabel="GHView" sizingBehavior="auto" id="LA5-l9-Rur">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="97g-JL-3yT">
+                                        <rect key="frame" x="0.0" y="14" width="127" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="GHView" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4kX-CD-zzj">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="addGHView:" target="B8D-0N-5wS" id="5dC-1c-T3B"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="LA5-l9-Rur"/>
                                 <toolbarItem reference="gKB-u2-8zd"/>
                                 <toolbarItem reference="Tys-Dm-uZe"/>
                             </defaultToolbarItems>
@@ -774,7 +789,7 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="AppViewController" customModule="GitHub_Contributions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="170"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="431"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <wkWebView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7M-j6-TFX">
@@ -786,7 +801,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dW-ZR-N4G">
-                                <rect key="frame" x="681" y="142" width="61" height="32"/>
+                                <rect key="frame" x="681" y="403" width="61" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Set" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0kP-Jj-CoA">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -797,13 +812,39 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Ym-N5-Leq">
-                                <rect key="frame" x="-2" y="153" width="66" height="17"/>
+                                <rect key="frame" x="-2" y="414" width="66" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Username" id="VEp-8s-Lff">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-SX-IK7">
+                                <rect key="frame" x="0.0" y="198" width="736" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Rtc-kv-COo">
+                                    <rect key="frame" x="1" y="1" width="734" height="158"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView ambiguous="YES" id="uP2-5Q-WIZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="734" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="eua-ii-97y">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="YGd-Gt-T2s">
+                                    <rect key="frame" x="1" y="143" width="734" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="FIW-Z2-I5F">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="3Ym-N5-Leq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="4BR-Zb-uG1"/>
@@ -817,7 +858,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="567"/>
+            <point key="canvasLocation" x="75" y="697.5"/>
         </scene>
     </scenes>
     <resources>

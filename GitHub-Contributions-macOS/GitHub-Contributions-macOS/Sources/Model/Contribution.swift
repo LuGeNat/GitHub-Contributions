@@ -35,5 +35,4 @@ public struct Contribution {
         image.unlockFocus()
         return image
     }
-
 }

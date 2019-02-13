@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		245FCD8CF6767BC208C26437 /* Pods_GitHub_Contributions_macOS_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9354FB96A06EDFB2F3D10CE4 /* Pods_GitHub_Contributions_macOS_Widget.framework */; };
+		3F2A3CE022133BE5004C7F6D /* ContributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A3CDF22133BE5004C7F6D /* ContributionView.swift */; };
 		3F2C1F83220F4827004B2B50 /* ChangeUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C1F82220F4827004B2B50 /* ChangeUsernameViewController.swift */; };
 		3F68F0A4220B266700E630FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F68F0A3220B266700E630FB /* Assets.xcassets */; };
 		3F68F0A7220B266700E630FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F68F0A5220B266700E630FB /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		0409EC677F98FCF666D2A205 /* Pods_GitHub_Contributions_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHub_Contributions_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A9E25A442CFFFB23D52AED /* Pods-GitHub-Contributions-macOS-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Contributions-macOS-Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-Contributions-macOS-Widget/Pods-GitHub-Contributions-macOS-Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		1A667BF3B5E6EE112E3FB8F7 /* Pods-GitHub-Contributions-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHub-Contributions-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHub-Contributions-macOS/Pods-GitHub-Contributions-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		3F2A3CDF22133BE5004C7F6D /* ContributionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionView.swift; sourceTree = "<group>"; };
 		3F2C1F82220F4827004B2B50 /* ChangeUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUsernameViewController.swift; sourceTree = "<group>"; };
 		3F68F09C220B266600E630FB /* GitHub Contributions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GitHub Contributions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F68F0A3220B266700E630FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		3F68F0D8220B27CD00E630FB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3F2A3CDF22133BE5004C7F6D /* ContributionView.swift */,
 				3F68F0A5220B266700E630FB /* Main.storyboard */,
 			);
 			path = UI;
@@ -414,6 +417,7 @@
 				3F68F0D5220B27AD00E630FB /* AppDelegate.swift in Sources */,
 				3F68F0D4220B27AD00E630FB /* AppHelper.swift in Sources */,
 				3F68F0D6220B27AD00E630FB /* Contribution.swift in Sources */,
+				3F2A3CE022133BE5004C7F6D /* ContributionView.swift in Sources */,
 				3F68F0D7220B27AD00E630FB /* GitHubHelper.swift in Sources */,
 				3F68F0DE220B3C3E00E630FB /* AppConfig.swift in Sources */,
 			);
