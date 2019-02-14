@@ -22,6 +22,8 @@ public class GitHubHelper {
     }
     
     // MARK: - Internal Methods
+    
+    // TODO: Add query for past yeasr: https://github.com/users/felixfoertsch/contributions?from=2010-01-01&to=2019-02-13
     private static func fetchContributionPage(for username: String) -> HTMLDocument {
         do {
             let url = URL(string: "https://github.com/users/\(username)/contributions")
