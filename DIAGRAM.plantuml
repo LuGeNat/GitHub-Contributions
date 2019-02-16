@@ -6,13 +6,12 @@ participant ContributionView << View Model >>
 participant Contribution << Model >>
 
 User -> AppWindowController: start app
-AppWindowController -> AppViewController: instantiate
+AppWindowController -> AppViewController: instantiate/display
 AppViewController -> ContributionView: instantiate
 ContributionView -> Contribution: instantiate
 ContributionView -> GitHubHelper: request data
 GitHubHelper -> ContributionView: fill model
 ContributionView -> AppViewController: update
-AppViewController -> AppWindowController: 
-User -> AppWindowController: send quit
+User -> AppWindowController: quit app
 AppWindowController -> User: quit app
 @enduml
