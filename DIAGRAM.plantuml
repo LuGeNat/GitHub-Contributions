@@ -1,0 +1,18 @@
+@startuml
+actor User
+participant AppWindowController << View >>
+participant AppViewController << View >>
+participant ContributionView << View Model >>
+participant Contribution << Model >>
+
+User -> AppWindowController: start app
+AppWindowController -> AppViewController: instantiate
+AppViewController -> ContributionView: instantiate
+ContributionView -> Contribution: instantiate
+ContributionView -> GitHubHelper: request data
+GitHubHelper -> ContributionView: fill model
+ContributionView -> AppViewController: update
+AppViewController -> AppWindowController: 
+User -> AppWindowController: send quit
+AppWindowController -> User: quit app
+@enduml
