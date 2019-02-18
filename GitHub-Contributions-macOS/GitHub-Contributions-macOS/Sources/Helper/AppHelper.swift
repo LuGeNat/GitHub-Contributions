@@ -1,5 +1,4 @@
 import Foundation
-import Kanna
 
 class AppHelper {
     private let userDefaults: UserDefaults
