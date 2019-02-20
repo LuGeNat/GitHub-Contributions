@@ -819,32 +819,13 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-SX-IK7">
-                                <rect key="frame" x="0.0" y="198" width="736" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Rtc-kv-COo">
-                                    <rect key="frame" x="1" y="1" width="734" height="158"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <collectionView ambiguous="YES" id="uP2-5Q-WIZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="734" height="158"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="eua-ii-97y">
-                                                <size key="itemSize" width="50" height="50"/>
-                                            </collectionViewFlowLayout>
-                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </collectionView>
-                                    </subviews>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="YGd-Gt-T2s">
-                                    <rect key="frame" x="1" y="143" width="734" height="16"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="FIW-Z2-I5F">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
+                            <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crF-TX-ssD">
+                                <rect key="frame" x="0.0" y="181" width="736" height="172"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <connections>
+                                    <segue destination="7gY-G9-ulv" kind="embed" id="kPf-PE-AIu"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="3Ym-N5-Leq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="4BR-Zb-uG1"/>
@@ -859,6 +840,60 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="697.5"/>
+        </scene>
+        <!--Collection View Item-->
+        <scene sceneID="V0Z-IT-gR2">
+            <objects>
+                <collectionViewItem id="QRd-yS-3rV" sceneMemberID="viewController">
+                    <view key="view" id="Mdx-RX-b9r">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </collectionViewItem>
+                <customObject id="P6m-l4-c2R" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-280" y="1204"/>
+        </scene>
+        <!--Contribution View Controller-->
+        <scene sceneID="NDJ-sT-RSh">
+            <objects>
+                <viewController id="7gY-G9-ulv" customClass="ContributionViewController" customModule="GitHub_Contributions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="5J1-7t-XbN">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glF-RJ-PcJ">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" ambiguous="YES" id="7n9-jE-tky">
+                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView ambiguous="YES" id="E8T-Dr-die">
+                                            <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Wic-6g-BZL">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Y9L-5q-A7m">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="lO9-bx-c2m">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="7HD-OA-bWm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="1221"/>
         </scene>
     </scenes>
     <resources>
