@@ -7,7 +7,4 @@ class AppWindowController: NSWindowController {
         vc.delegate = (self.window?.contentViewController as! AppViewController)
         self.window?.contentViewController?.presentAsSheet(vc)
     }
-    
-    @IBAction func addGHView(_ sender: Any) {
-    }
 }

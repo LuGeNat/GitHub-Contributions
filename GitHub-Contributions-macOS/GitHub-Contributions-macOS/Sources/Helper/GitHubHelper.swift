@@ -11,19 +11,12 @@ public class GitHubHelper {
         let svgXMLString = parseSVG(from: page)
         let contributions = parseContributions(from: page)
         let thisYearsContribution = parseThisYearsContributionsCount(from: page)
-        
-        var imageCol = [NSImage]()
-        for contribution in contributions {
-            let image = Contribution.generateContributionSquareImage(for: contribution, withEdgeLength: 10)
-            imageCol.append(image)
-        }
-        
         return (svgXMLString, contributions, thisYearsContribution)
     }
     
     // MARK: - Internal Methods
     
-    // TODO: Add query for past yeasr: https://github.com/users/felixfoertsch/contributions?from=2010-01-01&to=2019-02-13
+    // TODO: Add query for past year: https://github.com/users/felixfoertsch/contributions?from=2010-01-01&to=2019-02-13
     private static func fetchContributionPage(for username: String) -> HTMLDocument {
         do {
             let url = URL(string: "https://github.com/users/\(username)/contributions")
@@ -57,7 +50,8 @@ public class GitHubHelper {
             
             let contributionCount = Int(node["data-count"]!)!
             
-            let contribution = Contribution(dataDate: contributionDate, dataCount: contributionCount)
+            #warning("TODO: Think about force unwrap")
+            let contribution = Contribution(dataDate: contributionDate!, dataCount: contributionCount)
             contributions.append(contribution)
         }
         return contributions
@@ -65,6 +59,7 @@ public class GitHubHelper {
     
     private static func parseThisYearsContributionsCount(from contributionPage: HTMLDocument) -> Int {
         if let thisYearsContribution = contributionPage.at_xpath("/html/body/div/div/h2")?.content {
+            // GitHub returns a string with the count of contributions in it. This strips everything from this string, except the numbers.
             let count = thisYearsContribution.trimmingCharacters(in: CharacterSet(charactersIn: "1234567890").inverted)
             return Int(count)!
         }

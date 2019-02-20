@@ -2,22 +2,18 @@ import Foundation
 import Cocoa
 
 public struct Contribution {
-    let dataDate: Date?
-    let dataCount: Int?
-}
-
-#warning("Figure out where this should got")
-extension Contribution {
-    public static func generateContributionSquareImage(for contribution: Contribution, withEdgeLength length: Int) -> NSImage {
-        let edgeLength = CGFloat(length)
-        let image = NSImage(size: NSSize(width: edgeLength, height: edgeLength))
-        image.lockFocus()
-        
-        let color: NSColor
-        let colorSet = AppConfig.colorSet
-        
-        if let count = contribution.dataCount {
-            switch count {
+    let dataDate: Date
+    let dataCount: Int
+    var image: NSImage {
+        get {
+            let edgeLength = CGFloat(10)
+            let image = NSImage(size: NSSize(width: edgeLength, height: edgeLength))
+            image.lockFocus()
+            
+            let color: NSColor
+            let colorSet = AppConfig.colorSet
+            
+            switch self.dataCount {
             case 1...2:
                 color = NSColor(named: colorSet + "1") ?? NSColor.white
             case 3...5:
@@ -29,13 +25,11 @@ extension Contribution {
             default:
                 color = NSColor(named: colorSet + "0") ?? NSColor.white
             }
-        } else {
-            color = NSColor.white
+            
+            color.setFill()
+            NSBezierPath(rect: NSRect(x: 0.0, y: 0.0, width: edgeLength, height: edgeLength)).fill()
+            image.unlockFocus()
+            return image
         }
-        
-        color.setFill()
-        NSBezierPath(rect: NSRect(x: 0.0, y: 0.0, width: edgeLength, height: edgeLength)).fill()
-        image.unlockFocus()
-        return image
     }
 }

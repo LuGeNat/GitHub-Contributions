@@ -2,18 +2,21 @@
 actor User
 participant AppWindowController << View >>
 participant AppViewController << View >>
-participant ContributionView << View Model >>
+participant UsernameViewController << View Model >>
+participant ContributionViewController << View Model >>
 participant Contribution << Model >>
 participant GitHubHelper << Helper >>
 
 User -> AppWindowController: start app
 AppWindowController -> AppViewController: instantiate
-AppViewController -> ContributionView: instantiate with parameters
-ContributionView -> GitHubHelper: request data
-GitHubHelper -> ContributionView: send contribution data
-ContributionView -> Contribution: instantiate with data
-ContributionView -> ContributionView: fill model with contributions
-ContributionView -> AppViewController: update
+AppViewController -> UsernameViewController: instantiate
+UsernameViewController -> AppViewController: display?
+AppViewController -> ContributionViewController: instantiate with parameters
+ContributionViewController -> GitHubHelper: request data
+GitHubHelper -> ContributionViewController: send contribution data
+ContributionViewController -> Contribution: instantiate with data
+ContributionViewController -> ContributionViewController: fill model with contributions
+ContributionViewController -> AppViewController: update
 AppViewController -> AppWindowController: update
 AppWindowController -> User: display
 User -> AppWindowController: quit app
