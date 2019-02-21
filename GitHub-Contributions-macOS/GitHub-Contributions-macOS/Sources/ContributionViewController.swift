@@ -1,11 +1,31 @@
 import Cocoa
 
 class ContributionViewController: NSViewController {
+    @IBOutlet weak var collectionView: NSCollectionView!
+    
     #warning("TODO: Think about force unwrap")
     let contributions = GitHubHelper.fetch(for: AppHelper.appGroupDefaults.username!).contributions
 
     private func fetchContributions(username: String) -> [Contribution] {
         return GitHubHelper.fetch(for: username).contributions
+    }
+    
+    fileprivate func configureCollectionView() {
+        // 1
+        let flowLayout = NSCollectionViewFlowLayout()
+        flowLayout.itemSize = NSSize(width: 160.0, height: 140.0)
+        flowLayout.sectionInset = NSEdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0)
+        flowLayout.minimumInteritemSpacing = 20.0
+        flowLayout.minimumLineSpacing = 20.0
+        collectionView.collectionViewLayout = flowLayout
+        // 2
+        view.wantsLayer = true
+        // 3
+        collectionView.layer?.backgroundColor = NSColor.black.cgColor
+    }
+    
+    override func viewDidLoad() {
+        configureCollectionView()
     }
 }
 
@@ -15,8 +35,11 @@ extension ContributionViewController: NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = NSCollectionViewItem(nibName: "ContributionViewItem", bundle: nil)
-//        item.imageView?.image = self.contributions[IndexPath.].image
+        // Recycle or create an item.
+        let item = self.collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ContributionViewItem"), for: indexPath)
+        item.view = NSImageView(image: contributions[366].image)
+        // Configure the item with an image from the app's data structures
+
         return item
     }
 }

@@ -812,19 +812,6 @@
             </objects>
             <point key="canvasLocation" x="75" y="807"/>
         </scene>
-        <!--ContributionViewItem-->
-        <scene sceneID="KHI-5Y-0sc">
-            <objects>
-                <collectionViewItem title="ContributionViewItem" id="VmL-7G-yPB" sceneMemberID="viewController">
-                    <view key="view" id="6pr-fs-3cb">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </collectionViewItem>
-                <customObject id="yF5-oI-20q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-312" y="1208"/>
-        </scene>
         <!--Contribution View Controller-->
         <scene sceneID="NDJ-sT-RSh">
             <objects>
@@ -869,6 +856,9 @@
                             <constraint firstItem="glF-RJ-PcJ" firstAttribute="leading" secondItem="5J1-7t-XbN" secondAttribute="leading" id="eaH-JX-Yv4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="E8T-Dr-die" id="Dma-AT-HA6"/>
+                    </connections>
                 </viewController>
                 <customObject id="7HD-OA-bWm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
