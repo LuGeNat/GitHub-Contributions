@@ -11,16 +11,13 @@ class ContributionViewController: NSViewController {
     }
     
     fileprivate func configureCollectionView() {
-        // 1
         let flowLayout = NSCollectionViewFlowLayout()
-        flowLayout.itemSize = NSSize(width: 160.0, height: 140.0)
-        flowLayout.sectionInset = NSEdgeInsets(top: 10.0, left: 20.0, bottom: 10.0, right: 20.0)
-        flowLayout.minimumInteritemSpacing = 20.0
-        flowLayout.minimumLineSpacing = 20.0
+        flowLayout.itemSize = NSSize(width: 10.0, height: 10.0)
+        flowLayout.sectionInset = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.minimumInteritemSpacing = 10.0
+        flowLayout.minimumLineSpacing = 10.0
         collectionView.collectionViewLayout = flowLayout
-        // 2
         view.wantsLayer = true
-        // 3
         collectionView.layer?.backgroundColor = NSColor.black.cgColor
     }
     
