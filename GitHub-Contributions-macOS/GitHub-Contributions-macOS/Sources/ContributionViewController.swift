@@ -10,19 +10,8 @@ class ContributionViewController: NSViewController {
         return GitHubHelper.fetch(for: username).contributions
     }
     
-    fileprivate func configureCollectionView() {
-        let flowLayout = NSCollectionViewFlowLayout()
-        flowLayout.itemSize = NSSize(width: 10.0, height: 10.0)
-        flowLayout.sectionInset = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        flowLayout.minimumInteritemSpacing = 10.0
-        flowLayout.minimumLineSpacing = 10.0
-        collectionView.collectionViewLayout = flowLayout
-        view.wantsLayer = true
-        collectionView.layer?.backgroundColor = NSColor.black.cgColor
-    }
-    
     override func viewDidLoad() {
-        configureCollectionView()
+
     }
 }
 
