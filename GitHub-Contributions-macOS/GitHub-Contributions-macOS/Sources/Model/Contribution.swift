@@ -6,7 +6,7 @@ public struct Contribution {
     let dataCount: Int
     var image: NSImage {
         get {
-            let edgeLength = CGFloat(10)
+            let edgeLength = CGFloat(AppConfig.contributionImageSize)
             let image = NSImage(size: NSSize(width: edgeLength, height: edgeLength))
             image.lockFocus()
             
