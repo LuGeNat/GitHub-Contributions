@@ -11,7 +11,7 @@ class ContributionViewController: NSViewController {
     }
     
     override func viewDidLoad() {
-
+        self.collectionView.register(ContributionViewItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItem"))
     }
 }
 
@@ -21,11 +21,8 @@ extension ContributionViewController: NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        // Recycle or create an item.
-        let item = self.collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "ContributionViewItem"), for: indexPath)
+        let item = self.collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItem"), for: indexPath)
         item.view = NSImageView(image: contributions[indexPath.item].image)
-        // Configure the item with an image from the app's data structures
-
         return item
     }
 }
