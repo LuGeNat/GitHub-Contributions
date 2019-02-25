@@ -11,7 +11,8 @@ class ContributionViewController: NSViewController {
     }
     
     override func viewDidLoad() {
-        self.collectionView.register(ContributionViewItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItem"))
+//        self.collectionView.register(NSNib(nibNamed: "ContributionViewItemXIB", bundle: nil), forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemXIB"))
+        self.collectionView.register(ContributionViewItemCode.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemCode"))
     }
 }
 
@@ -21,14 +22,12 @@ extension ContributionViewController: NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let item = self.collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItem"), for: indexPath)
-        item.view = NSImageView(image: contributions[indexPath.item].image)
+        let contribution = contributions[indexPath.item]
+        
+        let item = self.collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemCode"), for: indexPath)
+        item.view = NSImageView(image: contribution.image)
+        let label = NSTextField(labelWithString: "\(contribution.dataCount)")
+        item.view.addSubview(label)
         return item
-    }
-}
-
-extension NSCollectionViewFlowLayout {
-    override open func shouldInvalidateLayout(forBoundsChange newBounds: NSRect) -> Bool {
-        return true
     }
 }

@@ -828,10 +828,11 @@
                                     <subviews>
                                         <collectionView autoresizesSubviews="NO" allowsEmptySelection="NO" id="E8T-Dr-die">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
-                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="5" scrollDirection="horizontal" id="JHa-gs-tii">
-                                                <size key="itemSize" width="10" height="10"/>
-                                            </collectionViewFlowLayout>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewGridLayout key="collectionViewLayout" id="DCt-oq-LvB">
+                                                <size key="minimumItemSize" width="20" height="20"/>
+                                                <size key="maximumItemSize" width="30" height="20"/>
+                                            </collectionViewGridLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="7gY-G9-ulv" id="9Jz-hd-c1H"/>
