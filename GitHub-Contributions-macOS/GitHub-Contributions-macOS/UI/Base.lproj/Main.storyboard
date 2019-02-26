@@ -692,29 +692,31 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="1EED07E7-7E18-4B6D-BFFC-22D4527CF382" displayMode="iconOnly" sizeMode="regular" id="YwN-AN-AtG">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="8ECE5D0A-12F5-4C96-B258-1F2E756B9368" label="Preferences" paletteLabel="Preferences" image="NSActionTemplate" sizingBehavior="auto" id="Tys-Dm-uZe">
+                                <toolbarItem implicitItemIdentifier="042256D8-A5DE-4ED5-938C-3256BB51022B" label="Username" paletteLabel="Username" sizingBehavior="auto" id="GyI-Th-gJ4">
                                     <nil key="toolTip"/>
-                                    <button key="view" verticalHuggingPriority="750" id="yb4-6c-MGF">
-                                        <rect key="frame" x="14" y="14" width="42" height="28"/>
+                                    <button key="view" verticalHuggingPriority="750" id="a3P-hl-5d1">
+                                        <rect key="frame" x="0.0" y="14" width="127" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSActionTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qcC-lf-ZrP">
+                                        <buttonCell key="cell" type="roundTextured" title="Username" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P3a-lO-GmS">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
                                     <connections>
-                                        <action selector="preferencesButtonPressed:" target="B8D-0N-5wS" id="B8M-RP-ucK"/>
+                                        <action selector="usernameButtonPressed:" target="B8D-0N-5wS" id="Hmx-ea-1yL"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="gKB-u2-8zd"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="gKB-u2-8zd"/>
-                                <toolbarItem reference="Tys-Dm-uZe"/>
+                                <toolbarItem reference="GyI-Th-gJ4"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
                     <connections>
+                        <outlet property="usernameButton" destination="GyI-Th-gJ4" id="Q2a-g7-ETf"/>
+                        <outlet property="usernameButtonCell" destination="P3a-lO-GmS" id="u7h-VX-0Tb"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -776,16 +778,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="240"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3Ym-N5-Leq">
-                                <rect key="frame" x="-2" y="223" width="66" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Username" id="VEp-8s-Lff">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="crF-TX-ssD">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="223"/>
+                                <rect key="frame" x="0.0" y="0.0" width="736" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="pSy-M7-pfC"/>
                                 </constraints>
@@ -795,18 +789,12 @@
                             </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="crF-TX-ssD" firstAttribute="top" secondItem="3Ym-N5-Leq" secondAttribute="bottom" id="1tx-bj-6ia"/>
-                            <constraint firstItem="3Ym-N5-Leq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="4BR-Zb-uG1"/>
-                            <constraint firstItem="3Ym-N5-Leq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="51Q-tq-yYB"/>
                             <constraint firstAttribute="trailing" secondItem="crF-TX-ssD" secondAttribute="trailing" id="BXy-91-SM2"/>
                             <constraint firstItem="crF-TX-ssD" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="GLi-4d-CEy"/>
                             <constraint firstAttribute="bottom" secondItem="crF-TX-ssD" secondAttribute="bottom" id="Qi2-m6-4Bn"/>
-                            <constraint firstItem="3Ym-N5-Leq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="lSr-1C-8j2"/>
+                            <constraint firstItem="crF-TX-ssD" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="nkf-eK-Guj"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="setUsernameLabel" destination="3Ym-N5-Leq" id="yEn-no-Cb6"/>
-                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -829,10 +817,9 @@
                                         <collectionView autoresizesSubviews="NO" allowsEmptySelection="NO" id="E8T-Dr-die">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                            <collectionViewGridLayout key="collectionViewLayout" id="DCt-oq-LvB">
-                                                <size key="minimumItemSize" width="20" height="20"/>
-                                                <size key="maximumItemSize" width="30" height="20"/>
-                                            </collectionViewGridLayout>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="KGV-AV-NuE">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="7gY-G9-ulv" id="9Jz-hd-c1H"/>
@@ -866,7 +853,4 @@
             <point key="canvasLocation" x="75" y="1221"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="NSActionTemplate" width="14" height="14"/>
-    </resources>
 </document>

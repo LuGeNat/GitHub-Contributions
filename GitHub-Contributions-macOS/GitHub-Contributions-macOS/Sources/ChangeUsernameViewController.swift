@@ -2,14 +2,15 @@ import Cocoa
 
 class ChangeUsernameViewController: NSViewController {
     let appDefaults = AppHelper.appGroupDefaults
-    weak var delegate: AppViewController?
+    weak var delegate: AppWindowController?
     @IBOutlet weak var usernameTextField: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
         if let username = AppHelper.appGroupDefaults.username {
             self.usernameTextField.stringValue = username
+        } else {
+            self.usernameTextField.placeholderString = "Enter your GitHub username"
         }
     }
     
