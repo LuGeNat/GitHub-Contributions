@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1E0B9DFE11A3B2711C371DDBBA9BDAA6"
+               BuildableName = "Kanna.framework"
                BlueprintName = "Kanna"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Kanna.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

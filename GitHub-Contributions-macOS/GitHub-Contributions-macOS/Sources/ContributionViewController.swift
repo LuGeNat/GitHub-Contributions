@@ -1,4 +1,5 @@
 import Cocoa
+import SnapKit
 
 class ContributionViewController: NSViewController {
     @IBOutlet weak var collectionView: NSCollectionView!
@@ -28,6 +29,9 @@ extension ContributionViewController: NSCollectionViewDataSource {
         item.view = NSImageView(image: contribution.image)
         let label = NSTextField(labelWithString: "\(contribution.dataCount)")
         item.view.addSubview(label)
+        label.snp.makeConstraints { (make) -> Void in
+            make.center.equalToSuperview()
+        }
         return item
     }
 }
