@@ -14,14 +14,21 @@ class AppWindowController: NSWindowController {
     
     @IBAction func refreshButtonPressed(_ sender: Any) {
         if let username = AppHelper.appGroupDefaults.username {
-            GitHubHelper.fetch(for: username)
+            AppHelper.contributions = GitHubHelper.fetch(for: username).contributions
+            self.window?.contentViewController?.children.first?.view
         }
     }
     
     override func windowDidLoad() {
         if let username = AppHelper.appGroupDefaults.username {
             didSet(username: username)
+        } else {
+            presentWelcomeWindow()
         }
+    }
+    
+    private func presentWelcomeWindow() {
+        // TODO: Create welcome screen
     }
     
 }

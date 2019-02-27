@@ -4,14 +4,13 @@ import SnapKit
 class ContributionViewController: NSViewController {
     @IBOutlet weak var collectionView: NSCollectionView!
     
-    #warning("TODO: Think about force unwrap")
-    let contributions = GitHubHelper.fetch(for: AppHelper.appGroupDefaults.username!).contributions
-
-    private func fetchContributions(username: String) -> [Contribution] {
-        return GitHubHelper.fetch(for: username).contributions
-    }
+    var contributions = [Contribution]()
     
     override func viewDidLoad() {
+        if let username = AppHelper.appGroupDefaults.username {
+            let tuple = GitHubHelper.fetch(for: username)
+            self.contributions = tuple.contributions
+        }
         self.collectionView.register(ContributionViewItemCode.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemCode"))
     }
 }

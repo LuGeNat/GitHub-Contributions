@@ -2,11 +2,14 @@ import Foundation
 
 class AppHelper {
     private let userDefaults: UserDefaults
-    public static var appGroupDefaults = AppHelper(userDefaults: UserDefaults(suiteName: AppConfig.appGroup)!)
+    public static var contributions = [Contribution]()
     
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
     }
+
+    public static var appGroupDefaults = AppHelper(userDefaults: UserDefaults(suiteName: AppConfig.appGroup)!)
+//    public static var appGroupDefaults = AppHelper(userDefaults: UserDefaults.standard)
     
     public var username: String? {
         get {
