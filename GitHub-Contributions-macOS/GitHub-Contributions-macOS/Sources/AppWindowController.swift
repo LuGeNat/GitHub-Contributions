@@ -14,16 +14,13 @@ class AppWindowController: NSWindowController {
     
     @IBAction func refreshButtonPressed(_ sender: Any) {
         if let username = AppHelper.appGroupDefaults.username {
-            AppHelper.contributions = GitHubHelper.fetch(for: username).contributions
-            let vc = self.contentViewController as! ContributionViewController
-            vc.collectionView.reloadData()
-            updateUsernameButton()
+            update(username: username)
         }
     }
     
     override func windowDidLoad() {
         if let username = AppHelper.appGroupDefaults.username {
-            didSet(username: username)
+            update(username: username)
         } else {
             presentWelcomeWindow()
         }
@@ -33,18 +30,22 @@ class AppWindowController: NSWindowController {
         // TODO: Create welcome screen
     }
     
-    private func updateUsernameButton() {
-        if let username = AppHelper.appGroupDefaults.username {
-            let updatedString = username + " (" + String(GitHubHelper.fetch(for: username).thisYearsContributionCount) + ")"
-            self.usernameButton.label = updatedString
-            self.usernameButtonCell.title = updatedString
-        }
+    private func update(username: String) {
+        AppHelper.appGroupDefaults.username = username
+        
+        AppHelper.contributions = GitHubHelper.fetch(for: username).contributions
+        let vc = self.contentViewController as! ContributionViewController
+        vc.collectionView.reloadData()
+        
+        let updatedString = username + " (" + String(GitHubHelper.fetch(for: username).thisYearsContributionCount) + ")"
+        self.usernameButton.label = updatedString
+        self.usernameButtonCell.title = updatedString
     }
 }
 
 extension AppWindowController: ChangeUsernameViewControllerDelegate {
     func didSet(username: String) {
-        AppHelper.appGroupDefaults.username = username
-        updateUsernameButton()
+//        AppHelper.appGroupDefaults.username = username
+        update(username: username)
     }
 }
