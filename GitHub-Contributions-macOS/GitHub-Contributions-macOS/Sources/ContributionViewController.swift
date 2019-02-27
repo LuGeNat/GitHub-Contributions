@@ -11,7 +11,7 @@ class ContributionViewController: NSViewController {
             let tuple = GitHubHelper.fetch(for: username)
             self.contributions = tuple.contributions
         }
-        self.collectionView.register(ContributionViewItemCode.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemCode"))
+        self.collectionView.register(ContributionViewItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItem"))
     }
 }
 
@@ -23,13 +23,8 @@ extension ContributionViewController: NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let contribution = AppHelper.contributions[indexPath.item]
         
-        let item = self.collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemCode"), for: indexPath)
-        item.view = NSImageView(image: contribution.image)
-        let label = NSTextField(labelWithString: "\(contribution.dataCount)")
-        item.view.addSubview(label)
-        label.snp.makeConstraints { (make) -> Void in
-            make.center.equalToSuperview()
-        }
+        let item = self.collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItem"), for: indexPath) as! ContributionViewItem
+        item.set(contribution)
         return item
     }
 }
