@@ -13,15 +13,19 @@ class ContributionViewController: NSViewController {
         }
         self.collectionView.register(ContributionViewItemCode.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemCode"))
     }
+    
+    public func refresh() {
+        self.collectionView.reloadData()
+    }
 }
 
 extension ContributionViewController: NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return contributions.count
+        return AppHelper.contributions.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let contribution = contributions[indexPath.item]
+        let contribution = AppHelper.contributions[indexPath.item]
         
         let item = self.collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemCode"), for: indexPath)
         item.view = NSImageView(image: contribution.image)

@@ -15,7 +15,8 @@ class AppWindowController: NSWindowController {
     @IBAction func refreshButtonPressed(_ sender: Any) {
         if let username = AppHelper.appGroupDefaults.username {
             AppHelper.contributions = GitHubHelper.fetch(for: username).contributions
-            self.window?.contentViewController?.children.first?.view
+            let vc = self.contentViewController as! ContributionViewController
+            vc.refresh()
         }
     }
     
