@@ -13,10 +13,6 @@ class ContributionViewController: NSViewController {
         }
         self.collectionView.register(ContributionViewItemCode.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemCode"))
     }
-    
-    public func refresh() {
-        self.collectionView.reloadData()
-    }
 }
 
 extension ContributionViewController: NSCollectionViewDataSource {
