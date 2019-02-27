@@ -14,7 +14,7 @@ class AppWindowController: NSWindowController {
     
     @IBAction func refreshButtonPressed(_ sender: Any) {
         if let username = AppHelper.appGroupDefaults.username {
-            update(username: username)
+            self.update(username: username)
         }
     }
     
@@ -33,13 +33,16 @@ class AppWindowController: NSWindowController {
     private func update(username: String) {
         AppHelper.appGroupDefaults.username = username
         
-        AppHelper.contributions = GitHubHelper.fetch(for: username).contributions
-        let vc = self.contentViewController as! ContributionViewController
-        vc.collectionView.reloadData()
-        
-        let updatedString = username + " (" + String(GitHubHelper.fetch(for: username).thisYearsContributionCount) + ")"
-        self.usernameButton.label = updatedString
-        self.usernameButtonCell.title = updatedString
+        DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
+            AppHelper.contributions = GitHubHelper.fetch(for: username).contributions
+            DispatchQueue.main.async {
+                let vc = self.contentViewController as! ContributionViewController
+                vc.collectionView.reloadData()
+                let updatedString = username + " (" + String(GitHubHelper.fetch(for: username).thisYearsContributionCount) + ")"
+                self.usernameButton.label = updatedString
+                self.usernameButtonCell.title = updatedString
+            }
+        }
     }
 }
 
