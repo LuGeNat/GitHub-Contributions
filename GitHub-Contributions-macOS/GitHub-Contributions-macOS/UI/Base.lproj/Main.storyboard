@@ -692,6 +692,20 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <toolbar key="toolbar" implicitIdentifier="1EED07E7-7E18-4B6D-BFFC-22D4527CF382" displayMode="iconOnly" sizeMode="regular" id="YwN-AN-AtG">
                             <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="9033173D-299F-4C5B-A5F6-2D5B66D0CA84" label="Refresh" paletteLabel="Refresh" image="NSRefreshTemplate" sizingBehavior="auto" id="WHy-tA-8nl">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="uVe-2e-4TD">
+                                        <rect key="frame" x="3" y="14" width="42" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRefreshTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1Ek-Pi-okj">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="refreshButtonPressed:" target="B8D-0N-5wS" id="ZoS-eM-2gv"/>
+                                    </connections>
+                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="042256D8-A5DE-4ED5-938C-3256BB51022B" label="Username" paletteLabel="Username" sizingBehavior="auto" id="GyI-Th-gJ4">
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="a3P-hl-5d1">
@@ -711,6 +725,7 @@
                             <defaultToolbarItems>
                                 <toolbarItem reference="gKB-u2-8zd"/>
                                 <toolbarItem reference="GyI-Th-gJ4"/>
+                                <toolbarItem reference="WHy-tA-8nl"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -816,7 +831,7 @@
                                     <subviews>
                                         <collectionView autoresizesSubviews="NO" allowsEmptySelection="NO" id="E8T-Dr-die">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="158"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="2" minimumLineSpacing="2" scrollDirection="horizontal" id="KGV-AV-NuE">
                                                 <size key="itemSize" width="20" height="20"/>
                                             </collectionViewFlowLayout>
@@ -853,4 +868,7 @@
             <point key="canvasLocation" x="75" y="1221"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
+    </resources>
 </document>

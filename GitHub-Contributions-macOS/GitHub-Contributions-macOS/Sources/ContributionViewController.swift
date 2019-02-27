@@ -12,7 +12,6 @@ class ContributionViewController: NSViewController {
     }
     
     override func viewDidLoad() {
-//        self.collectionView.register(NSNib(nibNamed: "ContributionViewItemXIB", bundle: nil), forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemXIB"))
         self.collectionView.register(ContributionViewItemCode.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier("ContributionViewItemCode"))
     }
 }
