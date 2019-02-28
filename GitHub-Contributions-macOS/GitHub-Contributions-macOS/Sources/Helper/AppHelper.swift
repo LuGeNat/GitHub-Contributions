@@ -3,6 +3,7 @@ import Foundation
 class AppHelper {
     private let userDefaults: UserDefaults
     public static var contributions = [Contribution]()
+    public static var thisYearsContributionCount = 0
     
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
