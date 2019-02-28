@@ -32,11 +32,11 @@ class AppWindowController: NSWindowController {
     
     private func update(username: String) {
         AppHelper.appGroupDefaults.username = username
+        let vc = self.contentViewController as! ContributionViewController
         
-        DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
+        DispatchQueue.global(qos: .utility).async {
             AppHelper.contributions = GitHubHelper.fetch(for: username).contributions
             DispatchQueue.main.async {
-                let vc = self.contentViewController as! ContributionViewController
                 vc.collectionView.reloadData()
                 let updatedString = username + " (" + String(GitHubHelper.fetch(for: username).thisYearsContributionCount) + ")"
                 self.usernameButton.label = updatedString
