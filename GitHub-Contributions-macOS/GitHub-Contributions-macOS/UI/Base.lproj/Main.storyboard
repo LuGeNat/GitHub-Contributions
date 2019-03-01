@@ -748,7 +748,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KX4-U2-5uM">
-                                <rect key="frame" x="294" y="8" width="72" height="32"/>
+                                <rect key="frame" x="305" y="8" width="61" height="32"/>
                                 <buttonCell key="cell" type="push" title="Set" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WXW-wu-NBY">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -772,7 +772,7 @@
                         <constraints>
                             <constraint firstItem="dEE-ZM-bLD" firstAttribute="leading" secondItem="nFJ-PO-hON" secondAttribute="leading" constant="40" id="KVC-23-nXS"/>
                             <constraint firstItem="dEE-ZM-bLD" firstAttribute="centerY" secondItem="nFJ-PO-hON" secondAttribute="centerY" id="fQc-hn-Z6C"/>
-                            <constraint firstItem="KX4-U2-5uM" firstAttribute="leading" secondItem="dEE-ZM-bLD" secondAttribute="trailing" constant="10" id="jRG-Z2-Uii"/>
+                            <constraint firstItem="KX4-U2-5uM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dEE-ZM-bLD" secondAttribute="trailing" constant="8" symbolic="YES" id="jRG-Z2-Uii"/>
                             <constraint firstItem="KX4-U2-5uM" firstAttribute="centerY" secondItem="nFJ-PO-hON" secondAttribute="centerY" id="oey-tR-TcX"/>
                             <constraint firstAttribute="trailing" secondItem="KX4-U2-5uM" secondAttribute="trailing" constant="40" id="u7E-Sh-KCr"/>
                         </constraints>
@@ -790,17 +790,17 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ContributionViewController" customModule="GitHub_Contributions" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="5J1-7t-XbN">
-                        <rect key="frame" x="0.0" y="0.0" width="682" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glF-RJ-PcJ">
-                                <rect key="frame" x="0.0" y="0.0" width="682" height="504"/>
-                                <clipView key="contentView" drawsBackground="NO" id="7n9-jE-tky">
-                                    <rect key="frame" x="1" y="1" width="680" height="502"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <clipView key="contentView" id="7n9-jE-tky">
+                                    <rect key="frame" x="1" y="1" width="598" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView autoresizesSubviews="NO" allowsEmptySelection="NO" id="E8T-Dr-die">
-                                            <rect key="frame" x="0.0" y="0.0" width="680" height="502"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="598" height="298"/>
                                             <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="2" minimumLineSpacing="2" scrollDirection="horizontal" id="KGV-AV-NuE">
                                                 <size key="itemSize" width="20" height="20"/>
@@ -812,11 +812,15 @@
                                         </collectionView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Y9L-5q-A7m">
-                                    <rect key="frame" x="1" y="229" width="448" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="iUY-EK-ecB"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="sZX-mW-HwT"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Y9L-5q-A7m">
+                                    <rect key="frame" x="1" y="133" width="28" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="lO9-bx-c2m">
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="lO9-bx-c2m">
                                     <rect key="frame" x="-100" y="-100" width="15" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -835,7 +839,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="782"/>
+            <point key="canvasLocation" x="75" y="497"/>
         </scene>
     </scenes>
     <resources>
