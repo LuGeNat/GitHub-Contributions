@@ -1,11 +1,11 @@
 PODS:
   - Kanna (4.0.3)
-  - SnapKit (4.0.1)
+  - SnapKit (4.2.0)
   - SwiftDate (5.1.0)
 
 DEPENDENCIES:
   - Kanna (~> 4.0.3)
-  - SnapKit (~> 4.0.0)
+  - SnapKit (~> 4.2.0)
   - SwiftDate (~> 5.0)
 
 SPEC REPOS:
@@ -16,9 +16,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
-  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
 
-PODFILE CHECKSUM: 6223383ae4e77dd69e505d7400fe79317413eb4b
+PODFILE CHECKSUM: cd287dc44fe699d776a6ae5a68e3c4ee8db2b0b9
 
 COCOAPODS: 1.6.1

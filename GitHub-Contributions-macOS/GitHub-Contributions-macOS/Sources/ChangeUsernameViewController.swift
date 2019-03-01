@@ -12,12 +12,19 @@ class ChangeUsernameViewController: NSViewController {
         } else {
             self.usernameTextField.placeholderString = "Enter your GitHub username"
         }
+        usernameTextField.delegate = self
     }
     
     @IBAction func setButtonPressed(_ sender: Any) {
         AppHelper.appGroupDefaults.username = usernameTextField.stringValue
         delegate?.didSet(username: usernameTextField.stringValue)
         self.dismiss(sender)
+    }
+}
+
+extension ChangeUsernameViewController: NSTextFieldDelegate {
+    func controlTextDidEndEditing(_ obj: Notification) {
+        setButtonPressed(Any.self)
     }
 }
 
