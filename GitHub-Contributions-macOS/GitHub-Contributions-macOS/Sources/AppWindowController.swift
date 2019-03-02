@@ -20,6 +20,7 @@ class AppWindowController: NSWindowController {
     
     override func windowDidLoad() {
         if let username = AppHelper.appGroupDefaults.username {
+            setUsernameButton()
             update(username: username)
         } else {
             presentWelcomeWindow()
@@ -30,19 +31,28 @@ class AppWindowController: NSWindowController {
         // TODO: Create welcome screen
     }
     
+    private func setUsernameButton() {
+        if let username = AppHelper.appGroupDefaults.username {
+            let updatedString = username + " (\(AppHelper.appGroupDefaults.thisYearsContributionCount ?? 0))"
+            self.usernameButton.label = updatedString
+            self.usernameButtonCell.title = updatedString
+        } else {
+            self.usernameButton.label = "Set your GitHub username!"
+            self.usernameButtonCell.title = "Set your GitHub username!"
+        }
+        
+    }
+    
     private func update(username: String) {
-        AppHelper.appGroupDefaults.username = username
-
         DispatchQueue.global(qos: .utility).async { [unowned self] in
             let tuple = GitHubHelper.fetch(for: username)
+            AppHelper.appGroupDefaults.username = username
+            AppHelper.appGroupDefaults.thisYearsContributionCount = tuple.thisYearsContributionCount
             AppHelper.contributions = tuple.contributions
-            AppHelper.thisYearsContributionCount = tuple.thisYearsContributionCount
-            
+
             DispatchQueue.main.async {
                 (self.contentViewController as! ContributionViewController).collectionView.reloadData()
-                let updatedString = username + " (\(AppHelper.thisYearsContributionCount))"
-                self.usernameButton.label = updatedString
-                self.usernameButtonCell.title = updatedString
+                self.setUsernameButton()
             }
         }
     }

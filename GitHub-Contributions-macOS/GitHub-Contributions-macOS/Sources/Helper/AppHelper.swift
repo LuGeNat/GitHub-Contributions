@@ -3,7 +3,6 @@ import Foundation
 class AppHelper {
     private let userDefaults: UserDefaults
     public static var contributions = [Contribution]()
-    public static var thisYearsContributionCount = 0
     
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
@@ -18,6 +17,16 @@ class AppHelper {
         }
         set {
             self.userDefaults.set(newValue, forKey: "username")
+            self.userDefaults.synchronize()
+        }
+    }
+    
+    public var thisYearsContributionCount: Int? {
+        get {
+            return self.userDefaults.integer(forKey: "thisYearsContributionCount")
+        }
+        set {
+            self.userDefaults.set(newValue, forKey: "thisYearsContributionCount")
             self.userDefaults.synchronize()
         }
     }
