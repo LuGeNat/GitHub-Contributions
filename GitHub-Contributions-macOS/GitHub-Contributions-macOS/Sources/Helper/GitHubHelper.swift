@@ -54,7 +54,7 @@ public class GitHubHelper {
             let contribution = Contribution(dataDate: contributionDate!, dataCount: contributionCount)
             contributions.append(contribution)
         }
-        return contributions
+        return contributions.reversed()
     }
     
     private static func parseThisYearsContributionsCount(from contributionPage: HTMLDocument) -> Int {

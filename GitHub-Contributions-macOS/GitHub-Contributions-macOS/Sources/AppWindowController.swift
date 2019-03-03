@@ -60,7 +60,6 @@ class AppWindowController: NSWindowController {
 
 extension AppWindowController: ChangeUsernameViewControllerDelegate {
     func didSet(username: String) {
-//        AppHelper.appGroupDefaults.username = username
         update(username: username)
     }
 }

@@ -2,7 +2,7 @@ import Cocoa
 import SnapKit
 
 class ContributionViewItem: NSCollectionViewItem {
-    let label = NSTextField(labelWithString: "2")
+    let label = NSTextField(labelWithString: "")
     
     override func viewDidLoad() {
         view.addSubview(label)
